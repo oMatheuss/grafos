@@ -98,26 +98,26 @@ public class CriarGrafo {
 
         System.out.println("12.remover um vértice, dado o vértice");
 
-        Scanner scc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("informe o vertice para remover");
-        String verticee = scc.next();
+        String vertice = sc.next();
 
         for(String key: grafo.keySet()){
-            if(key.equals(verticee)){
+            if(key.equals(vertice)){
                 grafo.remove(key);
             }
         }
         //imprime o grafo sem o vertice;
         for(String key: grafo.keySet()){
-            if(key.equals(verticee)){
+            if(key.equals(vertice)){
                 System.out.println(key + ":" + grafo.get(key));
             }
         }
         System.out.println("13.remover uma aresta, dado dois vértices");
-
-        Scanner sccc = new Scanner(System.in);
-        System.out.println("informe o vertice para remover");
-        String arestas = sccc.next();
+//
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("informe o vertice para remover");
+//        String arr= sc.next();
 
         //TODO logica para remover
 
