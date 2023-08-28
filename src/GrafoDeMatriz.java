@@ -142,6 +142,43 @@ public class GrafoDeMatriz {
         int vertexIndex = Arrays.binarySearch(vertex, vertice);
         if (vertexIndex < 0) return;
         int[][] newGrafo = new int[vertex.length - 1][vertex.length - 1];
+        for (int i = 0, k = 0; i < vertex.length; i++, k++) {
+            if (i == vertexIndex) {
+                k--;
+                continue;
+            }
+            for (int j = 0, l = 0; j < vertex.length; j++, l++) {
+                if (j == vertexIndex) {
+                    l--;
+                    continue;
+                }
 
+                newGrafo[k][l] = grafo[i][j];
+            }
+        }
+
+        String[] newVertex = new String[vertex.length - 1];
+        for (int i = 0, j = 0; i < vertex.length; i++, j++) {
+            if (i == vertexIndex) {
+                j--;
+                continue;
+            }
+            newVertex[j] = vertex[i];
+        }
+
+        grafo = newGrafo;
+        vertex = newVertex;
+    }
+
+    public void removerAresta() {
+        Scanner sc = new Scanner(System.in);
+        String vertice1 = sc.next();
+        String vertice2 = sc.next();
+        int vertex1Index = Arrays.binarySearch(vertex, vertice1);
+        int vertex2Index = Arrays.binarySearch(vertex, vertice2);
+
+        if (vertex1Index < 0 || vertex2Index < 0) return;
+
+        grafo[vertex1Index][vertex2Index] = 0;
     }
 }
