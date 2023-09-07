@@ -50,6 +50,8 @@ public class Main {
                 case "8" -> grafo.printExisteLaco();
                 case "9" -> grafo.printSequenciaGraus();
                 case "10" -> grafo.printVerticesAdjacentes();
+                case "12" -> grafo.removerVertice();
+                case "13" -> grafo.removerAresta();
                 case "14" -> {
                     System.out.println("(╯°□°)╯︵ ┻━┻");
                     return;
